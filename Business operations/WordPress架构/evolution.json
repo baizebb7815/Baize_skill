@@ -1,0 +1,14 @@
+{
+  "last_updated": "2026-02-08T00:00:00",
+  "preferences": [
+    "默认以 /greenshift_layout.md 与 /greenshift_Experimental.md 作为项目语法基准",
+    "当用户提供参考网址/截图/排版参考时：先拆模块与栅格，再映射样式与交互",
+    "输出按 Safe/Full 档自动切换：最终只交付可粘贴区块（不夹解释）"
+  ],
+  "fixes": [
+    "assets/greenshift-templates/*.html 必须通过 validate_greenshift_block.py（element 的 id/localId=gsbp-7位小写字母数字，data-type 走 dynamicAttributes）",
+    "references/greenshift-block-patterns.md 需包含项目导出片段与可复用交互示例（flipstate/slidingPanel/interactionLayers/isSlider）",
+    "避免任何建议或操作导致用户误删 greenshift_layout.md / greenshift_Experimental.md"
+  ],
+  "custom_prompts": "接到复刻任务时：先引用项目导出语法片段锁定写法，再给 1)模块拆解 2)栅格断点 3)字体层级 4)交互映射 5)最终 Gutenberg 注释式区块；若参考与可实现冲突，优先可导入与可渲染。"
+}

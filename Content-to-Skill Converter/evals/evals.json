@@ -1,0 +1,113 @@
+{
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I have this tutorial on setting up Docker containers. Can you turn it into a skill?",
+      "expectations": [
+        "Claude should trigger the content-to-skill skill",
+        "Claude should ask for the tutorial content (file upload, URL, or paste)",
+        "Claude should not generate the skill without seeing the actual content"
+      ],
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Make a skill from this article: [User pastes a detailed blog post about React hooks best practices]",
+      "expectations": [
+        "Claude analyzes the content type (conceptual/tutorial)",
+        "Claude identifies key concepts and procedures",
+        "Claude presents a summary for user confirmation",
+        "Claude generates SKILL.md with proper structure including triggers, procedures, examples",
+        "Claude creates evaluation test cases"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Convert this API documentation into a reusable skill",
+      "expectations": [
+        "Claude asks for the documentation (upload, URL, or paste)",
+        "Claude should plan to structure it as reference material with usage patterns",
+        "Claude should extract API endpoints, parameters, and examples"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I uploaded a PDF tutorial. Please skillify it.",
+      "expectations": [
+        "Claude uses view tool to read the PDF from /mnt/user-data/uploads/",
+        "Claude performs deep content analysis",
+        "Claude creates a complete skill package in proper directory structure",
+        "Claude copies final output to /mnt/user-data/outputs/"
+      ],
+      "files": ["tutorial.pdf"]
+    },
+    {
+      "id": 4,
+      "prompt": "Turn this into a skill but keep it simple, I just need the basics",
+      "expectations": [
+        "Claude enters Quick Conversion Mode",
+        "Claude skips detailed confirmation steps",
+        "Claude generates skill with core procedures and 3-5 basic eval cases",
+        "Claude presents complete package quickly"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Create a skill from https://example.com/tutorial/kubernetes-deployment",
+      "expectations": [
+        "Claude uses web_fetch to retrieve the web page content",
+        "Claude analyzes the tutorial structure",
+        "Claude extracts step-by-step deployment procedures",
+        "Claude generates appropriate evaluation cases for deployment scenarios"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I want to make a skill but I want to be involved in the process. Here's my content: [paste]",
+      "expectations": [
+        "Claude enters Interactive Refinement Mode",
+        "Claude confirms understanding after analysis",
+        "Claude asks about scope, triggers, and target users",
+        "Claude shows drafts of sections for approval",
+        "Claude iterates based on user feedback"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I have three related blog posts on the same topic. Can you create one unified skill?",
+      "expectations": [
+        "Claude enters Batch Processing Mode",
+        "Claude asks for all three content sources",
+        "Claude analyzes all sources together",
+        "Claude identifies commonalities and contradictions",
+        "Claude creates a unified skill or explains if separate skills are better"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "This shouldn't trigger: How do I write good documentation?",
+      "expectations": [
+        "Claude should NOT trigger the content-to-skill skill",
+        "Claude should answer the question directly about documentation writing",
+        "This is a general question, not a request to convert content into a skill"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "After creating the skill, I want to test it. Can you help?",
+      "expectations": [
+        "Claude offers to run the evaluation cases",
+        "Claude explains how to test the skill manually",
+        "Claude may reference the skill-creator skill for formal testing"
+      ],
+      "files": []
+    }
+  ]
+}

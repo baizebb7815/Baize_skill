@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO META - CUSTOMIZE THESE -->
+    <title>[Product] | [Benefit] | BASIS SIGN</title>
+    <meta name="description" content="[Pain Point] + [Solution] + [Trust Signal] + [CTA]">
+    
+    <!-- Optional: Open Graph for social sharing -->
+    <meta property="og:title" content="[Same as title]">
+    <meta property="og:description" content="[Same as meta description]">
+    <meta property="og:image" content="[Hero image URL]">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .hero .cta-primary {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .hero .cta-primary:hover { background: #ee5a52; }
+        .hero .trust-signal {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+        
+        /* Value Proposition Section */
+        .value-prop {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+        .value-prop h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .comparison-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .comparison-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .comparison-card.pain { border-left: 4px solid #e74c3c; }
+        .comparison-card.solution { border-left: 4px solid #2ecc71; }
+        .comparison-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .comparison-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .pain li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .solution li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        /* Product Showcase */
+        .product-showcase {
+            padding: 60px 20px;
+        }
+        .product-showcase h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .geo-tip {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            font-style: italic;
+        }
+        .geo-tip strong { color: #1976d2; }
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        /* Trust & Risk Reversal */
+        .trust-section {
+            padding: 60px 20px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .trust-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .trust-item {
+            text-align: center;
+        }
+        .trust-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .testimonial p { font-style: italic; margin-bottom: 10px; }
+        .testimonial .author { font-weight: 600; font-style: normal; }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .final-cta .cta-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .final-cta .cta-button:hover { transform: scale(1.05); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .comparison { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="container">
+        <h1>[Pain-Point or Outcome-Driven Headline]</h1>
+        <p class="subheadline">[Explain ease, trust, differentiation in 1-2 sentences]</p>
+        <a href="#quote-form" class="cta-primary">[Action CTA - e.g., "Get Installation Quote"]</a>
+        <p class="trust-signal">Trusted by [X,XXX+] US Businesses Since [YEAR] | ★★★★★ ([XXX] Reviews)</p>
+    </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section class="value-prop">
+    <div class="container">
+        <h2>[Why Pre-Assembled/Easy Install/etc. Saves Time and Money]</h2>
+        <div class="comparison">
+            <div class="comparison-card pain">
+                <h3>❌ Traditional Signage Pain Points</h3>
+                <ul>
+                    <li>[Pain point 1 - e.g., "2-3 days of on-site installation"]</li>
+                    <li>[Pain point 2 - e.g., "Requires expensive licensed electrician"]</li>
+                    <li>[Pain point 3 - e.g., "Complex permit process"]</li>
+                    <li>[Pain point 4 - e.g., "Unexpected delays and costs"]</li>
+                </ul>
+            </div>
+            <div class="comparison-card solution">
+                <h3>✓ BASIS SIGN Advantages</h3>
+                <ul>
+                    <li>[Solution 1 - e.g., "Installs in 2-3 hours"]</li>
+                    <li>[Solution 2 - e.g., "General contractor can install"]</li>
+                    <li>[Solution 3 - e.g., "Permit-ready documentation included"]</li>
+                    <li>[Solution 4 - e.g., "Fixed pricing, no surprises"]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT SHOWCASE & GEO SNIPPET -->
+<section class="product-showcase">
+    <div class="container">
+        <h2>[Product Name/Category - e.g., "Pre-Assembled Channel Letters"]</h2>
+        
+        <!-- GEO Pro Tip: Quotable Definition -->
+        <div class="geo-tip">
+            <strong>💡 GEO Pro Tip:</strong> [Insert citation-worthy sentence here following definition/comparison/stat patterns from seo_geo_tactics.md. Example: "For restaurant owners seeking code-compliant exterior signage, BASIS SIGN's pre-assembled channel letters reduce installation time from days to hours while ensuring UL certification and NEC compliance."]
+        </div>
+        
+        <div class="product-features">
+            <div class="feature-card">
+                <h3>🔧 Easy Installation</h3>
+                <p>[Specific details about pre-assembly, mounting process, time required]</p>
+            </div>
+            <div class="feature-card">
+                <h3>✅ Code Compliant</h3>
+                <p>[UL listing, NEC standards, permit documentation details]</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Cost Savings</h3>
+                <p>[Specific dollar amounts saved on labor, reduced installation time]</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Fast Turnaround</h3>
+                <p>[Production timeline, shipping details, availability]</p>
+            </div>
+        </div>
+        
+        <!-- Interactive Hook -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#" class="cta-primary">[Download Install Guide / View Installation Video / Get Free Mockup]</a>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST & RISK REVERSAL -->
+<section class="trust-section">
+    <div class="container">
+        <h2>Your Project is Protected</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h3>🛡️ Warranty</h3>
+                <p>[X]-Year comprehensive warranty on all components</p>
+            </div>
+            <div class="trust-item">
+                <h3>📦 Shipping Protection</h3>
+                <p>Insured nationwide shipping, damage-free guarantee</p>
+            </div>
+            <div class="trust-item">
+                <h3>🎨 Design Support</h3>
+                <p>Free mockups and expert guidance throughout</p>
+            </div>
+            <div class="trust-item">
+                <h3>☎️ Responsive Support</h3>
+                <p>Technical support available [hours], [response time]</p>
+            </div>
+        </div>
+        
+        <!-- Testimonial -->
+        <div class="testimonial">
+            <p>"[Realistic US business owner testimonial highlighting specific benefit like time saved, cost saved, ease of installation, or quality. Keep it authentic and specific, not generic praise.]"</p>
+            <p class="author">— [Name], [Business Type], [City, State]</p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>[Strong closing headline - e.g., "Ready to Upgrade Your Storefront?"]</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">[Clear next step explanation - e.g., "Get a detailed quote in under 2 minutes"]</p>
+        <a href="#quote-form" class="cta-button">[Clear Action - e.g., "Request Free Quote & Mockup"]</a>
+    </div>
+</section>
+
+<!-- FAQ Section (Optional but recommended for SEO/GEO) -->
+<!-- Add structured FAQ schema markup -->
+
+</body>
+</html>
